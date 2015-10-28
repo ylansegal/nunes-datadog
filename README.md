@@ -1,8 +1,6 @@
 # Nunes::Datadog
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nunes/datadog`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Adapter for the [Nunes][1] instrumentation library and the [Datadog service][2]. This adapter is required because the [dogstatsd-ruby gem][3] does not implement the same API as the [statsd-ruby][4] gem, which works out-of-the-box with Nunes.
 
 ## Installation
 
@@ -22,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In a rails initializer or similar:
+
+``` ruby
+require "nunes/datadog"
+require "statsd"
+
+client = Nunes::Datadog::Adapter.new(Statsd.new)
+Nunes.subscribe(client)
+```
 
 ## Development
 
@@ -32,5 +38,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nunes-datadog.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ylansegal/nunes-datadog.
 
+[1]: https://github.com/jnunemaker/nunes
+[2]: https://www.datadoghq.com/
+[3]: https://github.com/DataDog/dogstatsd-ruby
+[4]: https://github.com/reinh/statsd

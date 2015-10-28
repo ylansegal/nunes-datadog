@@ -7,19 +7,13 @@ Gem::Specification.new do |spec|
   spec.name          = "nunes-datadog"
   spec.version       = Nunes::Datadog::VERSION
   spec.authors       = ["Ylan Segal"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.email         = ["ylan@segal-family.com"]
 
-  spec.summary       = "TODO: Write a short summary, because Rubygems requires one."
-  spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
-  # delete this section to allow pushing this gem to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    fail "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
+  spec.summary       = "Adapter for the Nunes instrumentation library and the Datadog service"
+  spec.description   = "Adapter for the Nunes instrumentation library and the Datadog service. \
+                        This adapter is required because the dogstatsd-ruby gem3 does not implement the same API as \
+                        the statsd-ruby gem, which works out-of-the-box with Nunes."
+  spec.homepage      = "https://github.com/ylansegal/nunes-datadog"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"

@@ -6,6 +6,7 @@ require "nunes/datadog/version"
 Gem::Specification.new do |spec|
   spec.name          = "nunes-datadog"
   spec.version       = Nunes::Datadog::VERSION
+  spec.license       = "MIT"
   spec.authors       = ["Ylan Segal"]
   spec.email         = ["ylan@segal-family.com"]
 
